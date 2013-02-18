@@ -1,8 +1,16 @@
 MeshFu
 ======
 
-MeshFu a library that uses assimp to generate compressed meshes. These lightweight meshes can then be loaded by libMeshfu at runtime without having to link against assimp and the memory and computational overhead that entails.
+MeshFu a library that uses assimp to generate compressed meshes. These lightweight meshes can then be loaded by libMeshfu at runtime without having to link against assimp and the memory and computational overhead that entails. On the display end, only VBOs are used, with an abstract wrapper that supports both native cinder VBOs and bloomtimes excellent cinder-glkit VBOs.
 
+This kit provides:
+
+blocks/MeshFu : this is the core lib for representing meshes and textures and converting them to shader-friendly VBOs
+src/MeshFuUtil : this primarily provides MeshPacker, a utility that uses Assimp to load a mesh and spit out a compressed version that can be quickly and simply read by MeshFu
+src/*App* : these are wrappers that abstract away kit specific app implementations (i.e. vanilla cinder vs. glkit) and then 
+src/cmake
+meshFuDesktopAppExample
+meshFuGlkitAppExample
 
 Build prerequisites:
 
