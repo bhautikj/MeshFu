@@ -7,6 +7,7 @@ MeshFu a library that uses assimp to generate compressed meshes. These lightweig
 Build prerequisites:
 
 * get boost
+
     http://sourceforge.net/projects/boost/files/boost/1.48.0/boost_1_48_0.tar.gz/download
     tar zxf boost_1_48_0.tar.gz
 
