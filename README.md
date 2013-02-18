@@ -3,7 +3,7 @@ MeshFu
 
 MeshFu a library that uses assimp to generate compressed, optimised meshes. These lightweight (small size, preprocessed) meshes can then be loaded by libMeshfu at runtime without having to link against assimp and the memory and computational overhead that entails. On the display end, only VBOs are used, with an abstract wrapper that supports both native cinder VBOs and bloomtimes excellent cinder-glkit VBOs.
 
-It is important to note that a fork of assimp is needed for the mesh packing utility (I make use of morph targets, which are not in the master build for assimp) and that the example code require forked versions of cinder/cinder_es2 as well (small changes related to how the shader is interfaced with). See *Building from scratch* below for more info.
+It is important to note that a fork of assimp is needed for the mesh packing utility (I make use of morph targets, which are not in the master build for assimp) and that the example code require forked versions of cinder/cinder_es2 as well (small changes related to how the shader is interfaced with). See *Building base libraries* below for more info.
 
 Mesh packing? Why?
 ------------------
@@ -67,8 +67,23 @@ Under the hood, all we are doing is:
 
 *Loading and displaying meshes*
 
+In your init/setup routine:
 
+    #include "MeshFuModelWrangler.h"
 
+    std::string modelPath("inputMesh.dae.cmf")
+    MeshFu::ModelWrangler mLoader = MeshFu::ModelWrangler( modelPath );
+    igzstream testIn;
+    testIn.open(modelPath.c_str());
+    mLoader.read(testIn);
+    testIn.close();
+    mLoader.buildAll();
+
+And in your draw routine:
+
+    mLoader.draw();
+
+It is important to note that at the moment, we are assuming that the loaded meshes are completely skinned. Any vertices that are not bound to a bone will be rendered in the rest position. Fixing this is on the TODO list :)
 
 Whats in the kit
 ----------------
@@ -90,9 +105,6 @@ Asset & shader data:
 
     src/assets : sample collada mesh and compressed mesh version of it
     src/skinMorph.* : shaders used for the GPU-based skinning
-
-Building
---------
 
     
 Building base libraries
@@ -134,3 +146,12 @@ get cinder_es2
 get cinder-glkit
 
     git clone https://github.com/bloomtime/cinder-glkit cinder-glkit
+    
+TODO
+----
+
+* Permit loading of unskinned meshes
+* Put model loading into a worker thread, and put in support for callbacks to let UI know what % the models are loaded
+* 2D UI library that works on ES2
+* Font rendering library that works on ES2
+
