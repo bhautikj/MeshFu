@@ -5,15 +5,20 @@ MeshFu a library that uses assimp to generate compressed, optimised meshes. Thes
 
 This kit provides:
 
-  Core:
+Core:
+
     blocks/MeshFu : this is the core lib for representing meshes and textures and converting them to shader-friendly VBOs
     src/MeshFuUtil : this primarily provides MeshPacker, a utility that uses Assimp to load a mesh and spit out a compressed version that can be  quickly and simply read by MeshFu
     src/cmake : cmake scripts for cinder
-  Example - mesh loading & GPU-based skinning
+    
+Example - mesh loading & GPU-based skinning:
+
     src/*App* : these are interfaces that abstract away kit specific app implementations (i.e. vanilla cinder vs. glkit) and provide a kit-agnostic wrapper (AppCore.*) that is common to both.
     meshFuDesktopAppExample - GPU-based skinning for the desktop
     meshFuGlkitAppExample - GPU-based skinning in OpenGL ES2 using bloomtime-glkit
-  Asset & shader data:
+
+Asset & shader data:
+
     src/assets : sample collada mesh and compressed mesh version of it
     src/skinMorph.* : shaders used for the GPU-based skinning
 
