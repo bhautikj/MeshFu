@@ -1,0 +1,423 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		719E5F0416D28A0800EFE915 /* MeshPacker.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 719E5F0316D28A0800EFE915 /* MeshPacker.1 */; };
+		719E5F0B16D28A4200EFE915 /* MeshPacker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 719E5F0816D28A4200EFE915 /* MeshPacker.cpp */; };
+		719E5F0C16D28A4200EFE915 /* ModelWranglerAssimp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 719E5F0916D28A4200EFE915 /* ModelWranglerAssimp.cpp */; };
+		719E5F1E16D28A5000EFE915 /* gzstream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 719E5F1716D28A5000EFE915 /* gzstream.cpp */; };
+		719E5F1F16D28A5000EFE915 /* MeshFuContainer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 719E5F1816D28A5000EFE915 /* MeshFuContainer.cpp */; };
+		719E5F2016D28A5000EFE915 /* MeshFuDrawableMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 719E5F1916D28A5000EFE915 /* MeshFuDrawableMesh.cpp */; };
+		719E5F2116D28A5000EFE915 /* MeshFuGeometry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 719E5F1A16D28A5000EFE915 /* MeshFuGeometry.cpp */; };
+		719E5F2216D28A5000EFE915 /* MeshFuModelWrangler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 719E5F1B16D28A5000EFE915 /* MeshFuModelWrangler.cpp */; };
+		719E5F2316D28A5000EFE915 /* MeshFuNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 719E5F1C16D28A5000EFE915 /* MeshFuNode.cpp */; };
+		719E5F2416D28A5000EFE915 /* MeshFuUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 719E5F1D16D28A5000EFE915 /* MeshFuUtil.cpp */; };
+		719E5F2B16D28FB700EFE915 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29B97324FDCFA39411CA2CEA /* AppKit.framework */; };
+		719E5F2C16D28FB700EFE915 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13E42FB307B3F0F600E4EEF1 /* CoreData.framework */; };
+		719E5F2D16D28FB700EFE915 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29B97325FDCFA39411CA2CEA /* Foundation.framework */; };
+		719E5F2E16D28FB700EFE915 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784AF0FF439BC000DE1D7 /* Accelerate.framework */; };
+		719E5F2F16D28FB700EFE915 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B00FF439BC000DE1D7 /* AudioToolbox.framework */; };
+		719E5F3016D28FB700EFE915 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B10FF439BC000DE1D7 /* AudioUnit.framework */; };
+		719E5F3116D28FB700EFE915 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B20FF439BC000DE1D7 /* CoreAudio.framework */; };
+		719E5F3216D28FB700EFE915 /* QuickTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0097E3E40F3E9819005A4392 /* QuickTime.framework */; };
+		719E5F3316D28FB700EFE915 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B50EAFCA7E003A9687 /* QTKit.framework */; };
+		719E5F3416D28FB700EFE915 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B10EAFCA74003A9687 /* CoreVideo.framework */; };
+		719E5F3516D28FB700EFE915 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53E3CDFB0E86099300238D2B /* Carbon.framework */; };
+		719E5F3616D28FB700EFE915 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0091D8F80E81B9330029341E /* OpenGL.framework */; };
+		719E5F3716D28FB700EFE915 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		719E5EFC16D28A0800EFE915 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				719E5F0416D28A0800EFE915 /* MeshPacker.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0091D8F80E81B9330029341E /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
+		0097E3E40F3E9819005A4392 /* QuickTime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickTime.framework; path = /System/Library/Frameworks/QuickTime.framework; sourceTree = "<absolute>"; };
+		00B784AF0FF439BC000DE1D7 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		00B784B00FF439BC000DE1D7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		00B784B10FF439BC000DE1D7 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
+		00B784B20FF439BC000DE1D7 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		00CCAF14116A9FEE008396D5 /* CinderApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = CinderApp.icns; path = ../resources/CinderApp.icns; sourceTree = SOURCE_ROOT; };
+		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		5323E6B10EAFCA74003A9687 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = /System/Library/Frameworks/CoreVideo.framework; sourceTree = "<absolute>"; };
+		5323E6B50EAFCA7E003A9687 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = /System/Library/Frameworks/QTKit.framework; sourceTree = "<absolute>"; };
+		53E3CDFB0E86099300238D2B /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
+		719E5EFE16D28A0800EFE915 /* MeshPacker */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "compiled.mach-o.executable"; path = MeshPacker; sourceTree = BUILT_PRODUCTS_DIR; };
+		719E5F0316D28A0800EFE915 /* MeshPacker.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = MeshPacker.1; sourceTree = "<group>"; };
+		719E5F0816D28A4200EFE915 /* MeshPacker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MeshPacker.cpp; path = ../../src/MeshFuUtil/MeshPacker.cpp; sourceTree = "<group>"; };
+		719E5F0916D28A4200EFE915 /* ModelWranglerAssimp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ModelWranglerAssimp.cpp; path = ../../src/MeshFuUtil/ModelWranglerAssimp.cpp; sourceTree = "<group>"; };
+		719E5F0A16D28A4200EFE915 /* ModelWranglerAssimp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModelWranglerAssimp.h; path = ../../src/MeshFuUtil/ModelWranglerAssimp.h; sourceTree = "<group>"; };
+		719E5F0F16D28A5000EFE915 /* gzstream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gzstream.h; sourceTree = "<group>"; };
+		719E5F1016D28A5000EFE915 /* MeshFuContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeshFuContainer.h; sourceTree = "<group>"; };
+		719E5F1116D28A5000EFE915 /* MeshFuDrawableMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeshFuDrawableMesh.h; sourceTree = "<group>"; };
+		719E5F1216D28A5000EFE915 /* MeshFuGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeshFuGeometry.h; sourceTree = "<group>"; };
+		719E5F1316D28A5000EFE915 /* MeshFuModelWrangler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeshFuModelWrangler.h; sourceTree = "<group>"; };
+		719E5F1416D28A5000EFE915 /* MeshFuNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeshFuNode.h; sourceTree = "<group>"; };
+		719E5F1516D28A5000EFE915 /* MeshFuUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeshFuUtil.h; sourceTree = "<group>"; };
+		719E5F1716D28A5000EFE915 /* gzstream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = gzstream.cpp; sourceTree = "<group>"; };
+		719E5F1816D28A5000EFE915 /* MeshFuContainer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MeshFuContainer.cpp; sourceTree = "<group>"; };
+		719E5F1916D28A5000EFE915 /* MeshFuDrawableMesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MeshFuDrawableMesh.cpp; sourceTree = "<group>"; };
+		719E5F1A16D28A5000EFE915 /* MeshFuGeometry.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MeshFuGeometry.cpp; sourceTree = "<group>"; };
+		719E5F1B16D28A5000EFE915 /* MeshFuModelWrangler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MeshFuModelWrangler.cpp; sourceTree = "<group>"; };
+		719E5F1C16D28A5000EFE915 /* MeshFuNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MeshFuNode.cpp; sourceTree = "<group>"; };
+		719E5F1D16D28A5000EFE915 /* MeshFuUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MeshFuUtil.cpp; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		719E5EFB16D28A0800EFE915 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				719E5F2B16D28FB700EFE915 /* AppKit.framework in Frameworks */,
+				719E5F2C16D28FB700EFE915 /* CoreData.framework in Frameworks */,
+				719E5F2D16D28FB700EFE915 /* Foundation.framework in Frameworks */,
+				719E5F2E16D28FB700EFE915 /* Accelerate.framework in Frameworks */,
+				719E5F2F16D28FB700EFE915 /* AudioToolbox.framework in Frameworks */,
+				719E5F3016D28FB700EFE915 /* AudioUnit.framework in Frameworks */,
+				719E5F3116D28FB700EFE915 /* CoreAudio.framework in Frameworks */,
+				719E5F3216D28FB700EFE915 /* QuickTime.framework in Frameworks */,
+				719E5F3316D28FB700EFE915 /* QTKit.framework in Frameworks */,
+				719E5F3416D28FB700EFE915 /* CoreVideo.framework in Frameworks */,
+				719E5F3516D28FB700EFE915 /* Carbon.framework in Frameworks */,
+				719E5F3616D28FB700EFE915 /* OpenGL.framework in Frameworks */,
+				719E5F3716D28FB700EFE915 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				719E5F0D16D28A5000EFE915 /* MeshFu */,
+				719E5F0816D28A4200EFE915 /* MeshPacker.cpp */,
+				719E5F0916D28A4200EFE915 /* ModelWranglerAssimp.cpp */,
+				719E5F0A16D28A4200EFE915 /* ModelWranglerAssimp.h */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
+				13E42FB307B3F0F600E4EEF1 /* CoreData.framework */,
+				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
+				00B784AF0FF439BC000DE1D7 /* Accelerate.framework */,
+				00B784B00FF439BC000DE1D7 /* AudioToolbox.framework */,
+				00B784B10FF439BC000DE1D7 /* AudioUnit.framework */,
+				00B784B20FF439BC000DE1D7 /* CoreAudio.framework */,
+				0097E3E40F3E9819005A4392 /* QuickTime.framework */,
+				5323E6B50EAFCA7E003A9687 /* QTKit.framework */,
+				5323E6B10EAFCA74003A9687 /* CoreVideo.framework */,
+				53E3CDFB0E86099300238D2B /* Carbon.framework */,
+				0091D8F80E81B9330029341E /* OpenGL.framework */,
+				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				719E5EFE16D28A0800EFE915 /* MeshPacker */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* MeshPacker */ = {
+			isa = PBXGroup;
+			children = (
+				29B97315FDCFA39411CA2CEA /* Headers */,
+				080E96DDFE201D6D7F000001 /* Source */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				719E5F0016D28A0800EFE915 /* MeshPacker */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = MeshPacker;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Headers;
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8D1107310486CEB800E47090 /* Info.plist */,
+				00CCAF14116A9FEE008396D5 /* CinderApp.icns */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
+				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		719E5F0016D28A0800EFE915 /* MeshPacker */ = {
+			isa = PBXGroup;
+			children = (
+				719E5F0316D28A0800EFE915 /* MeshPacker.1 */,
+			);
+			path = MeshPacker;
+			sourceTree = "<group>";
+		};
+		719E5F0D16D28A5000EFE915 /* MeshFu */ = {
+			isa = PBXGroup;
+			children = (
+				719E5F0E16D28A5000EFE915 /* include */,
+				719E5F1616D28A5000EFE915 /* src */,
+			);
+			name = MeshFu;
+			path = ../../blocks/MeshFu;
+			sourceTree = "<group>";
+		};
+		719E5F0E16D28A5000EFE915 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				719E5F0F16D28A5000EFE915 /* gzstream.h */,
+				719E5F1016D28A5000EFE915 /* MeshFuContainer.h */,
+				719E5F1116D28A5000EFE915 /* MeshFuDrawableMesh.h */,
+				719E5F1216D28A5000EFE915 /* MeshFuGeometry.h */,
+				719E5F1316D28A5000EFE915 /* MeshFuModelWrangler.h */,
+				719E5F1416D28A5000EFE915 /* MeshFuNode.h */,
+				719E5F1516D28A5000EFE915 /* MeshFuUtil.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		719E5F1616D28A5000EFE915 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				719E5F1716D28A5000EFE915 /* gzstream.cpp */,
+				719E5F1816D28A5000EFE915 /* MeshFuContainer.cpp */,
+				719E5F1916D28A5000EFE915 /* MeshFuDrawableMesh.cpp */,
+				719E5F1A16D28A5000EFE915 /* MeshFuGeometry.cpp */,
+				719E5F1B16D28A5000EFE915 /* MeshFuModelWrangler.cpp */,
+				719E5F1C16D28A5000EFE915 /* MeshFuNode.cpp */,
+				719E5F1D16D28A5000EFE915 /* MeshFuUtil.cpp */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		719E5EFD16D28A0800EFE915 /* MeshPacker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 719E5F0516D28A0800EFE915 /* Build configuration list for PBXNativeTarget "MeshPacker" */;
+			buildPhases = (
+				719E5EFA16D28A0800EFE915 /* Sources */,
+				719E5EFB16D28A0800EFE915 /* Frameworks */,
+				719E5EFC16D28A0800EFE915 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MeshPacker;
+			productName = MeshPacker;
+			productReference = 719E5EFE16D28A0800EFE915 /* MeshPacker */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+			};
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "MeshPacker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* MeshPacker */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				719E5EFD16D28A0800EFE915 /* MeshPacker */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		719E5EFA16D28A0800EFE915 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				719E5F0B16D28A4200EFE915 /* MeshPacker.cpp in Sources */,
+				719E5F0C16D28A4200EFE915 /* ModelWranglerAssimp.cpp in Sources */,
+				719E5F1E16D28A5000EFE915 /* gzstream.cpp in Sources */,
+				719E5F1F16D28A5000EFE915 /* MeshFuContainer.cpp in Sources */,
+				719E5F2016D28A5000EFE915 /* MeshFuDrawableMesh.cpp in Sources */,
+				719E5F2116D28A5000EFE915 /* MeshFuGeometry.cpp in Sources */,
+				719E5F2216D28A5000EFE915 /* MeshFuModelWrangler.cpp in Sources */,
+				719E5F2316D28A5000EFE915 /* MeshFuNode.cpp in Sources */,
+				719E5F2416D28A5000EFE915 /* MeshFuUtil.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		719E5F0616D28A0800EFE915 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libstdc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		719E5F0716D28A0800EFE915 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libstdc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ASSIMP_PATH = "";
+				CINDER_PATH = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"\"$(CINDER_PATH)/boost\"",
+					"\"$(ASSIMP_PATH)/include\"",
+				);
+				MACOSX_DEPLOYMENT_TARGET = "";
+				OTHER_LDFLAGS = (
+					"\"$(CINDER_PATH)/lib/libcinder.a\"",
+					"\"$(ASSIMP_PATH)/build/code/libassimp.a\"",
+					"-lz",
+				);
+				SDKROOT = "";
+				USER_HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\" ../include \"$(ASSIMP_PATH)/include\"";
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ASSIMP_PATH = "";
+				CINDER_PATH = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"\"$(CINDER_PATH)/boost\"",
+					"\"$(ASSIMP_PATH)/include\"",
+				);
+				MACOSX_DEPLOYMENT_TARGET = "";
+				OTHER_LDFLAGS = (
+					"\"$(CINDER_PATH)/lib/libcinder.a\"",
+					"\"$(ASSIMP_PATH)/build/code/libassimp.a\"",
+					"-lz",
+				);
+				SDKROOT = "";
+				USER_HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\" ../include \"$(ASSIMP_PATH)/include\"";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		719E5F0516D28A0800EFE915 /* Build configuration list for PBXNativeTarget "MeshPacker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				719E5F0616D28A0800EFE915 /* Debug */,
+				719E5F0716D28A0800EFE915 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "MeshPacker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
