@@ -94,6 +94,10 @@ namespace MeshFu
     
     void requestUpdate();
     
+    void printOrientation()
+    {
+      std::cout<<"angle: "<<mOrientation.getAngle()<<" pitch:"<<mOrientation.getPitch()<<" yaw:"<<mOrientation.getYaw()<<" roll:"<<mOrientation.getRoll()<<std::endl;
+    }
     
   protected:
     /// Shared pointer to parent node.

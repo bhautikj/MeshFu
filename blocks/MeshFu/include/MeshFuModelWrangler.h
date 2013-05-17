@@ -44,6 +44,8 @@ namespace MeshFu
     MeshContainerRef                      getMeshByName(std::string name) { return mMeshMap[name]; }
     NodeRef                               getNodeByName(std::string name) { return mNodeMap[name]; }
     
+    NodeRef                               getRootNode() { return mRootNode; }
+    
     void update();
     void draw();
     

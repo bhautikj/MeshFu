@@ -33,10 +33,9 @@
 
 namespace MeshFu
 {
-  
   class MeshContainer;
   typedef std::shared_ptr< MeshContainer > MeshContainerRef;
-  
+ 
   class MeshContainer
   {
   public:
@@ -79,14 +78,13 @@ namespace MeshFu
     
     
     std::vector< float >  mMorphWeights;
-    //std::map<std::string, int> mMorphChannelsNameMap;
     bool                  mValidCache;
     std::vector<BoneRef>  mBones;
     
     std::vector<ci::Vec4f>        mBoneIndices;
     std::vector<ci::Vec4f>        mBoneWeights;
     
-    //don't write this out to file - for runtime drawing
+    //Non-cached elements
     DrawableMeshRef       mDrawable;
   };
   
