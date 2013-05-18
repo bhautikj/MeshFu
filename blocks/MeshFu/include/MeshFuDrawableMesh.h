@@ -62,7 +62,7 @@ namespace MeshFu
     int                               mNNormals;
     cinder::Matrix44f                 mNodeTransform;
     
-    friend class MeshContainer;
+    friend class Geometry;
   };
   
   typedef std::shared_ptr< DrawableMesh > DrawableMeshRef;

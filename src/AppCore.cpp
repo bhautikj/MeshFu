@@ -155,7 +155,7 @@ mValidAsset(true)
     return;
   
   //TODO: break this into UI friendly pieces
-  mLoader = MeshFu::ModelWrangler( modelPath );
+  mLoader = MeshFu::RiggedGeometry( modelPath );
   igzstream testIn;
   testIn.open(modelPath.c_str());
   mLoader.read(testIn);
@@ -168,7 +168,7 @@ mValidAsset(true)
   while (it != tmpMeshNames.end())
   {
     string meshName = *it;
-    MeshFu::MeshContainerRef meshfu = mLoader.getMeshByName(meshName);
+    MeshFu::GeometryRef meshfu = mLoader.getMeshByName(meshName);
     if (meshfu->mMorphs.size() != 0)
       mMeshNames.push_back(meshName);
     it++;
@@ -208,7 +208,7 @@ Model::update()
     
     for (int i = 0; i < mMeshNames.size(); i++)
     {
-      MeshFu::MeshContainerRef meshfu = mLoader.getMeshByName(mMeshNames[i]);
+      MeshFu::GeometryRef meshfu = mLoader.getMeshByName(mMeshNames[i]);
       meshfu->mMorphWeights[0] = morphAnim;
     }
     

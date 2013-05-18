@@ -31,7 +31,6 @@
 #include "cinder/Matrix.h"
 
 #include "MeshFuGeometry.h"
-#include "MeshFuContainer.h"
 #include "gzstream.h"
 
 namespace MeshFu
@@ -59,7 +58,7 @@ namespace MeshFu
     
     void addChild( NodeRef child );
     void addChildName (std::string name) { mChildNodeNames.push_back(name); }
-    void addMesh(MeshContainerRef mesh) { mMeshes.push_back(mesh); }
+    void addMesh(GeometryRef mesh) { mMeshes.push_back(mesh); }
     void addMeshName(std::string name) { mMeshNames.push_back(name); }
     
     void setOrientation( const ci::Quatf &q );
@@ -108,7 +107,7 @@ namespace MeshFu
     std::vector< NodeRef > mChildren;
     std::vector< std::string > mChildNodeNames;
     
-    std::vector< MeshContainerRef > mMeshes;
+    std::vector< GeometryRef > mMeshes;
     std::vector< std::string > mMeshNames;
     
     /// Name of this node.
@@ -164,7 +163,7 @@ namespace MeshFu
     
     void update() const;
     
-    friend class ModelWrangler;
+    friend class RiggedGeometry;
   };
   
 }//namespace MeshFu

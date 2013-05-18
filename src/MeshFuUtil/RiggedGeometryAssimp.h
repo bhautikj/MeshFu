@@ -1,7 +1,7 @@
 #ifndef _MESHASSIMP_H_
 #define _MESHASSIMP_H_
 
-#include "MeshFuModelWrangler.h"
+#include "MeshFuRiggedGeometry.h"
 
 #include "assimp/scene.h"
 #include "assimp/Importer.hpp"
@@ -10,15 +10,15 @@ namespace MeshFu
 {
 
 
-class ModelWranglerAssimp : public ModelWrangler
+class RiggedGeometryAssimp : public RiggedGeometry
 {
   public:
-    ModelWranglerAssimp(const std::string &file);
-    ~ModelWranglerAssimp() {}
+    RiggedGeometryAssimp(const std::string &file);
+    ~RiggedGeometryAssimp() {}
 
   protected:
     void                                  loadAllMeshes();
-    MeshContainerRef                      convertAiMesh( const aiMesh *mesh, std::string nameToUse );
+    GeometryRef                      convertAiMesh( const aiMesh *mesh, std::string nameToUse );
     NodeRef                               loadNodes( const aiNode *nd, NodeRef parentRef = NodeRef()  );
 
     std::shared_ptr< Assimp::Importer >   mImporterRef;

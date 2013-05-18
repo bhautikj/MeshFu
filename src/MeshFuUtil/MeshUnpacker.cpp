@@ -2,7 +2,7 @@
 
 #include "gzstream.h"
 
-#include "MeshFuModelWrangler.h"
+#include "MeshFuRiggedGeometry.h"
 
 int main(int argc, char **argv)
 {
@@ -10,7 +10,7 @@ int main(int argc, char **argv)
   
   igzstream testIn;
   testIn.open(fileName.c_str());
-  MeshFu::ModelWrangler testLoader(fileName);
+  MeshFu::RiggedGeometry testLoader(fileName);
   testLoader.read(testIn);
   testIn.close();
   

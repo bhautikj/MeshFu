@@ -20,7 +20,7 @@
 #define _APPCORE_H_
 
 #include "MetaApp.h"
-#include "MeshFuModelWrangler.h"
+#include "MeshFuRiggedGeometry.h"
 #include "cinder/MayaCamUI.h"
 
 #include <vector>
@@ -37,7 +37,7 @@ public:
   void update();
   
 protected:
-  MeshFu::ModelWrangler mLoader;
+  MeshFu::RiggedGeometry mLoader;
   vector< string > mNodeNames;
   vector< string > mMeshNames;
   bool mValidAsset;

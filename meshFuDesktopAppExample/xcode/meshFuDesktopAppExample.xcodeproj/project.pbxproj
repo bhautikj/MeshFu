@@ -21,10 +21,9 @@
 		71267D4216D0D5A900588CE1 /* desktopApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71267D3E16D0D5A900588CE1 /* desktopApp.cpp */; };
 		71267D4316D0D5A900588CE1 /* MetaApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71267D3F16D0D5A900588CE1 /* MetaApp.cpp */; };
 		71267D5616D0D5BD00588CE1 /* gzstream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71267D4F16D0D5BD00588CE1 /* gzstream.cpp */; };
-		71267D5716D0D5BD00588CE1 /* MeshFuContainer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71267D5016D0D5BD00588CE1 /* MeshFuContainer.cpp */; };
 		71267D5816D0D5BD00588CE1 /* MeshFuDrawableMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71267D5116D0D5BD00588CE1 /* MeshFuDrawableMesh.cpp */; };
 		71267D5916D0D5BD00588CE1 /* MeshFuGeometry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71267D5216D0D5BD00588CE1 /* MeshFuGeometry.cpp */; };
-		71267D5A16D0D5BD00588CE1 /* MeshFuModelWrangler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71267D5316D0D5BD00588CE1 /* MeshFuModelWrangler.cpp */; };
+		71267D5A16D0D5BD00588CE1 /* MeshFuRiggedGeometry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71267D5316D0D5BD00588CE1 /* MeshFuRiggedGeometry.cpp */; };
 		71267D5B16D0D5BD00588CE1 /* MeshFuNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71267D5416D0D5BD00588CE1 /* MeshFuNode.cpp */; };
 		71267D5C16D0D5BD00588CE1 /* MeshFuUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71267D5516D0D5BD00588CE1 /* MeshFuUtil.cpp */; };
 		71267D6E16D0D64000588CE1 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 71267D6D16D0D64000588CE1 /* assets */; };
@@ -57,17 +56,15 @@
 		71267D3F16D0D5A900588CE1 /* MetaApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MetaApp.cpp; path = ../../src/MetaApp.cpp; sourceTree = SOURCE_ROOT; };
 		71267D4016D0D5A900588CE1 /* MetaApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MetaApp.h; path = ../../src/MetaApp.h; sourceTree = SOURCE_ROOT; };
 		71267D4716D0D5BD00588CE1 /* gzstream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = gzstream.h; path = ../../blocks/MeshFu/include/gzstream.h; sourceTree = SOURCE_ROOT; };
-		71267D4816D0D5BD00588CE1 /* MeshFuContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MeshFuContainer.h; path = ../../blocks/MeshFu/include/MeshFuContainer.h; sourceTree = SOURCE_ROOT; };
 		71267D4916D0D5BD00588CE1 /* MeshFuDrawableMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MeshFuDrawableMesh.h; path = ../../blocks/MeshFu/include/MeshFuDrawableMesh.h; sourceTree = SOURCE_ROOT; };
 		71267D4A16D0D5BD00588CE1 /* MeshFuGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MeshFuGeometry.h; path = ../../blocks/MeshFu/include/MeshFuGeometry.h; sourceTree = SOURCE_ROOT; };
-		71267D4B16D0D5BD00588CE1 /* MeshFuModelWrangler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MeshFuModelWrangler.h; path = ../../blocks/MeshFu/include/MeshFuModelWrangler.h; sourceTree = SOURCE_ROOT; };
+		71267D4B16D0D5BD00588CE1 /* MeshFuRiggedGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MeshFuRiggedGeometry.h; path = ../../blocks/MeshFu/include/MeshFuRiggedGeometry.h; sourceTree = SOURCE_ROOT; };
 		71267D4C16D0D5BD00588CE1 /* MeshFuNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MeshFuNode.h; path = ../../blocks/MeshFu/include/MeshFuNode.h; sourceTree = SOURCE_ROOT; };
 		71267D4D16D0D5BD00588CE1 /* MeshFuUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MeshFuUtil.h; path = ../../blocks/MeshFu/include/MeshFuUtil.h; sourceTree = SOURCE_ROOT; };
 		71267D4F16D0D5BD00588CE1 /* gzstream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = gzstream.cpp; path = ../../blocks/MeshFu/src/gzstream.cpp; sourceTree = SOURCE_ROOT; };
-		71267D5016D0D5BD00588CE1 /* MeshFuContainer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MeshFuContainer.cpp; path = ../../blocks/MeshFu/src/MeshFuContainer.cpp; sourceTree = SOURCE_ROOT; };
 		71267D5116D0D5BD00588CE1 /* MeshFuDrawableMesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MeshFuDrawableMesh.cpp; path = ../../blocks/MeshFu/src/MeshFuDrawableMesh.cpp; sourceTree = SOURCE_ROOT; };
 		71267D5216D0D5BD00588CE1 /* MeshFuGeometry.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MeshFuGeometry.cpp; path = ../../blocks/MeshFu/src/MeshFuGeometry.cpp; sourceTree = SOURCE_ROOT; };
-		71267D5316D0D5BD00588CE1 /* MeshFuModelWrangler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MeshFuModelWrangler.cpp; path = ../../blocks/MeshFu/src/MeshFuModelWrangler.cpp; sourceTree = SOURCE_ROOT; };
+		71267D5316D0D5BD00588CE1 /* MeshFuRiggedGeometry.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MeshFuRiggedGeometry.cpp; path = ../../blocks/MeshFu/src/MeshFuRiggedGeometry.cpp; sourceTree = SOURCE_ROOT; };
 		71267D5416D0D5BD00588CE1 /* MeshFuNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MeshFuNode.cpp; path = ../../blocks/MeshFu/src/MeshFuNode.cpp; sourceTree = SOURCE_ROOT; };
 		71267D5516D0D5BD00588CE1 /* MeshFuUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MeshFuUtil.cpp; path = ../../blocks/MeshFu/src/MeshFuUtil.cpp; sourceTree = SOURCE_ROOT; };
 		71267D6D16D0D64000588CE1 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = assets; path = ../../src/assets; sourceTree = SOURCE_ROOT; };
@@ -209,10 +206,9 @@
 			isa = PBXGroup;
 			children = (
 				71267D4716D0D5BD00588CE1 /* gzstream.h */,
-				71267D4816D0D5BD00588CE1 /* MeshFuContainer.h */,
 				71267D4916D0D5BD00588CE1 /* MeshFuDrawableMesh.h */,
 				71267D4A16D0D5BD00588CE1 /* MeshFuGeometry.h */,
-				71267D4B16D0D5BD00588CE1 /* MeshFuModelWrangler.h */,
+				71267D4B16D0D5BD00588CE1 /* MeshFuRiggedGeometry.h */,
 				71267D4C16D0D5BD00588CE1 /* MeshFuNode.h */,
 				71267D4D16D0D5BD00588CE1 /* MeshFuUtil.h */,
 			);
@@ -223,10 +219,9 @@
 			isa = PBXGroup;
 			children = (
 				71267D4F16D0D5BD00588CE1 /* gzstream.cpp */,
-				71267D5016D0D5BD00588CE1 /* MeshFuContainer.cpp */,
 				71267D5116D0D5BD00588CE1 /* MeshFuDrawableMesh.cpp */,
 				71267D5216D0D5BD00588CE1 /* MeshFuGeometry.cpp */,
-				71267D5316D0D5BD00588CE1 /* MeshFuModelWrangler.cpp */,
+				71267D5316D0D5BD00588CE1 /* MeshFuRiggedGeometry.cpp */,
 				71267D5416D0D5BD00588CE1 /* MeshFuNode.cpp */,
 				71267D5516D0D5BD00588CE1 /* MeshFuUtil.cpp */,
 			);
@@ -298,10 +293,9 @@
 				71267D4216D0D5A900588CE1 /* desktopApp.cpp in Sources */,
 				71267D4316D0D5A900588CE1 /* MetaApp.cpp in Sources */,
 				71267D5616D0D5BD00588CE1 /* gzstream.cpp in Sources */,
-				71267D5716D0D5BD00588CE1 /* MeshFuContainer.cpp in Sources */,
 				71267D5816D0D5BD00588CE1 /* MeshFuDrawableMesh.cpp in Sources */,
 				71267D5916D0D5BD00588CE1 /* MeshFuGeometry.cpp in Sources */,
-				71267D5A16D0D5BD00588CE1 /* MeshFuModelWrangler.cpp in Sources */,
+				71267D5A16D0D5BD00588CE1 /* MeshFuRiggedGeometry.cpp in Sources */,
 				71267D5B16D0D5BD00588CE1 /* MeshFuNode.cpp in Sources */,
 				71267D5C16D0D5BD00588CE1 /* MeshFuUtil.cpp in Sources */,
 				71267D7116D0D65400588CE1 /* skinMorph.fsh in Sources */,

@@ -129,5 +129,63 @@ namespace MeshFu
     virtual void                write(ogzstream& stream);
     virtual void                read(igzstream& stream);
   };
+
+  class Geometry;
+  typedef std::shared_ptr< Geometry > GeometryRef;
+ 
+  class Geometry : public MeshTri
+  {
+  public:
+    Geometry() : MeshTri()
+    {
+      
+    }
+    
+    ~Geometry()
+    {
+    }
+    
+    void                  build(std::string modelDir);
+    virtual void          write(ogzstream& stream);
+    virtual void          read(igzstream& stream);
+    
+    
+    struct textureStruct
+    {
+      std::string relativeTexPath;
+    };
+    
+    struct materialStruct
+    {
+      GLenum face;
+      ci::ColorAf dcolor;
+      ci::ColorAf scolor;
+      ci::ColorAf acolor;
+      ci::ColorAf ecolor;
+    };
+    
+    struct materialFormatStruct
+    {
+      GLenum wrapS;
+      GLenum wrapT;
+    };
+    
+    std::string           mName;
+    textureStruct         mTextureData;
+    materialStruct        mMaterialData;
+    materialFormatStruct  mMaterialFormatData;
+    bool                  mTwoSided;
+    
+    
+    std::vector< float >  mMorphWeights;
+    bool                  mValidCache;
+    std::vector<BoneRef>  mBones;
+    
+    std::vector<ci::Vec4f>        mBoneIndices;
+    std::vector<ci::Vec4f>        mBoneWeights;
+    
+    //Non-cached elements
+    DrawableMeshRef       mDrawable;
+  };
   
 } //namespace MeshFu

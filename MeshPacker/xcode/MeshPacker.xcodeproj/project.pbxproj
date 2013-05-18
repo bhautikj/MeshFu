@@ -9,12 +9,11 @@
 /* Begin PBXBuildFile section */
 		719E5F0416D28A0800EFE915 /* MeshPacker.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 719E5F0316D28A0800EFE915 /* MeshPacker.1 */; };
 		719E5F0B16D28A4200EFE915 /* MeshPacker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 719E5F0816D28A4200EFE915 /* MeshPacker.cpp */; };
-		719E5F0C16D28A4200EFE915 /* ModelWranglerAssimp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 719E5F0916D28A4200EFE915 /* ModelWranglerAssimp.cpp */; };
+		719E5F0C16D28A4200EFE915 /* RiggedGeometryAssimp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 719E5F0916D28A4200EFE915 /* RiggedGeometryAssimp.cpp */; };
 		719E5F1E16D28A5000EFE915 /* gzstream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 719E5F1716D28A5000EFE915 /* gzstream.cpp */; };
-		719E5F1F16D28A5000EFE915 /* MeshFuContainer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 719E5F1816D28A5000EFE915 /* MeshFuContainer.cpp */; };
 		719E5F2016D28A5000EFE915 /* MeshFuDrawableMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 719E5F1916D28A5000EFE915 /* MeshFuDrawableMesh.cpp */; };
 		719E5F2116D28A5000EFE915 /* MeshFuGeometry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 719E5F1A16D28A5000EFE915 /* MeshFuGeometry.cpp */; };
-		719E5F2216D28A5000EFE915 /* MeshFuModelWrangler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 719E5F1B16D28A5000EFE915 /* MeshFuModelWrangler.cpp */; };
+		719E5F2216D28A5000EFE915 /* MeshFuRiggedGeometry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 719E5F1B16D28A5000EFE915 /* MeshFuRiggedGeometry.cpp */; };
 		719E5F2316D28A5000EFE915 /* MeshFuNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 719E5F1C16D28A5000EFE915 /* MeshFuNode.cpp */; };
 		719E5F2416D28A5000EFE915 /* MeshFuUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 719E5F1D16D28A5000EFE915 /* MeshFuUtil.cpp */; };
 		719E5F2B16D28FB700EFE915 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29B97324FDCFA39411CA2CEA /* AppKit.framework */; };
@@ -63,20 +62,18 @@
 		719E5EFE16D28A0800EFE915 /* MeshPacker */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "compiled.mach-o.executable"; path = MeshPacker; sourceTree = BUILT_PRODUCTS_DIR; };
 		719E5F0316D28A0800EFE915 /* MeshPacker.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = MeshPacker.1; sourceTree = "<group>"; };
 		719E5F0816D28A4200EFE915 /* MeshPacker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MeshPacker.cpp; path = ../../src/MeshFuUtil/MeshPacker.cpp; sourceTree = "<group>"; };
-		719E5F0916D28A4200EFE915 /* ModelWranglerAssimp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ModelWranglerAssimp.cpp; path = ../../src/MeshFuUtil/ModelWranglerAssimp.cpp; sourceTree = "<group>"; };
-		719E5F0A16D28A4200EFE915 /* ModelWranglerAssimp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModelWranglerAssimp.h; path = ../../src/MeshFuUtil/ModelWranglerAssimp.h; sourceTree = "<group>"; };
+		719E5F0916D28A4200EFE915 /* RiggedGeometryAssimp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RiggedGeometryAssimp.cpp; path = ../../src/MeshFuUtil/RiggedGeometryAssimp.cpp; sourceTree = "<group>"; };
+		719E5F0A16D28A4200EFE915 /* RiggedGeometryAssimp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RiggedGeometryAssimp.h; path = ../../src/MeshFuUtil/RiggedGeometryAssimp.h; sourceTree = "<group>"; };
 		719E5F0F16D28A5000EFE915 /* gzstream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gzstream.h; sourceTree = "<group>"; };
-		719E5F1016D28A5000EFE915 /* MeshFuContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeshFuContainer.h; sourceTree = "<group>"; };
 		719E5F1116D28A5000EFE915 /* MeshFuDrawableMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeshFuDrawableMesh.h; sourceTree = "<group>"; };
 		719E5F1216D28A5000EFE915 /* MeshFuGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeshFuGeometry.h; sourceTree = "<group>"; };
-		719E5F1316D28A5000EFE915 /* MeshFuModelWrangler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeshFuModelWrangler.h; sourceTree = "<group>"; };
+		719E5F1316D28A5000EFE915 /* MeshFuRiggedGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeshFuRiggedGeometry.h; sourceTree = "<group>"; };
 		719E5F1416D28A5000EFE915 /* MeshFuNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeshFuNode.h; sourceTree = "<group>"; };
 		719E5F1516D28A5000EFE915 /* MeshFuUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeshFuUtil.h; sourceTree = "<group>"; };
 		719E5F1716D28A5000EFE915 /* gzstream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = gzstream.cpp; sourceTree = "<group>"; };
-		719E5F1816D28A5000EFE915 /* MeshFuContainer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MeshFuContainer.cpp; sourceTree = "<group>"; };
 		719E5F1916D28A5000EFE915 /* MeshFuDrawableMesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MeshFuDrawableMesh.cpp; sourceTree = "<group>"; };
 		719E5F1A16D28A5000EFE915 /* MeshFuGeometry.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MeshFuGeometry.cpp; sourceTree = "<group>"; };
-		719E5F1B16D28A5000EFE915 /* MeshFuModelWrangler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MeshFuModelWrangler.cpp; sourceTree = "<group>"; };
+		719E5F1B16D28A5000EFE915 /* MeshFuRiggedGeometry.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MeshFuRiggedGeometry.cpp; sourceTree = "<group>"; };
 		719E5F1C16D28A5000EFE915 /* MeshFuNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MeshFuNode.cpp; sourceTree = "<group>"; };
 		719E5F1D16D28A5000EFE915 /* MeshFuUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MeshFuUtil.cpp; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -111,8 +108,8 @@
 			children = (
 				719E5F0D16D28A5000EFE915 /* MeshFu */,
 				719E5F0816D28A4200EFE915 /* MeshPacker.cpp */,
-				719E5F0916D28A4200EFE915 /* ModelWranglerAssimp.cpp */,
-				719E5F0A16D28A4200EFE915 /* ModelWranglerAssimp.h */,
+				719E5F0916D28A4200EFE915 /* RiggedGeometryAssimp.cpp */,
+				719E5F0A16D28A4200EFE915 /* RiggedGeometryAssimp.h */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -212,10 +209,9 @@
 			isa = PBXGroup;
 			children = (
 				719E5F0F16D28A5000EFE915 /* gzstream.h */,
-				719E5F1016D28A5000EFE915 /* MeshFuContainer.h */,
 				719E5F1116D28A5000EFE915 /* MeshFuDrawableMesh.h */,
 				719E5F1216D28A5000EFE915 /* MeshFuGeometry.h */,
-				719E5F1316D28A5000EFE915 /* MeshFuModelWrangler.h */,
+				719E5F1316D28A5000EFE915 /* MeshFuRiggedGeometry.h */,
 				719E5F1416D28A5000EFE915 /* MeshFuNode.h */,
 				719E5F1516D28A5000EFE915 /* MeshFuUtil.h */,
 			);
@@ -226,10 +222,9 @@
 			isa = PBXGroup;
 			children = (
 				719E5F1716D28A5000EFE915 /* gzstream.cpp */,
-				719E5F1816D28A5000EFE915 /* MeshFuContainer.cpp */,
 				719E5F1916D28A5000EFE915 /* MeshFuDrawableMesh.cpp */,
 				719E5F1A16D28A5000EFE915 /* MeshFuGeometry.cpp */,
-				719E5F1B16D28A5000EFE915 /* MeshFuModelWrangler.cpp */,
+				719E5F1B16D28A5000EFE915 /* MeshFuRiggedGeometry.cpp */,
 				719E5F1C16D28A5000EFE915 /* MeshFuNode.cpp */,
 				719E5F1D16D28A5000EFE915 /* MeshFuUtil.cpp */,
 			);
@@ -286,12 +281,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				719E5F0B16D28A4200EFE915 /* MeshPacker.cpp in Sources */,
-				719E5F0C16D28A4200EFE915 /* ModelWranglerAssimp.cpp in Sources */,
+				719E5F0C16D28A4200EFE915 /* RiggedGeometryAssimp.cpp in Sources */,
 				719E5F1E16D28A5000EFE915 /* gzstream.cpp in Sources */,
-				719E5F1F16D28A5000EFE915 /* MeshFuContainer.cpp in Sources */,
 				719E5F2016D28A5000EFE915 /* MeshFuDrawableMesh.cpp in Sources */,
 				719E5F2116D28A5000EFE915 /* MeshFuGeometry.cpp in Sources */,
-				719E5F2216D28A5000EFE915 /* MeshFuModelWrangler.cpp in Sources */,
+				719E5F2216D28A5000EFE915 /* MeshFuRiggedGeometry.cpp in Sources */,
 				719E5F2316D28A5000EFE915 /* MeshFuNode.cpp in Sources */,
 				719E5F2416D28A5000EFE915 /* MeshFuUtil.cpp in Sources */,
 			);
@@ -407,6 +401,7 @@
 				719E5F0716D28A0800EFE915 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "MeshPacker" */ = {
 			isa = XCConfigurationList;

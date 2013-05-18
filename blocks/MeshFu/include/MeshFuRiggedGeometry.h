@@ -28,20 +28,20 @@
 namespace MeshFu
 {
   
-  class ModelWrangler
+  class RiggedGeometry
   {
     
   public:
-    ModelWrangler() {}
-    ModelWrangler(const std::string &file) : mFilePath(file) { };
-    ~ModelWrangler() {}
+    RiggedGeometry() {}
+    RiggedGeometry(const std::string &file) : mFilePath(file) { };
+    ~RiggedGeometry() {}
     virtual void                          write(ogzstream& stream);
     virtual void                          read(igzstream& stream);
     void                                  buildAll();
     
     std::vector< std::string >            getMeshNames() { return mMeshNames; }
     std::vector< std::string >            getNodeNames() { return mNodeNames; }
-    MeshContainerRef                      getMeshByName(std::string name) { return mMeshMap[name]; }
+    GeometryRef                      getMeshByName(std::string name) { return mMeshMap[name]; }
     NodeRef                               getNodeByName(std::string name) { return mNodeMap[name]; }
     
     NodeRef                               getRootNode() { return mRootNode; }
@@ -58,15 +58,15 @@ namespace MeshFu
     std::string                           mRootNodeName;
     
     // all the meshes
-    std::vector< MeshContainerRef >       mModelMeshes;
+    std::vector< GeometryRef >       mModelMeshes;
     
     // only the nodes with meshes
     std::vector< NodeRef >                mMeshNodes;
-    std::map<MeshContainerRef, std::vector<NodeRef> >
+    std::map<GeometryRef, std::vector<NodeRef> >
                                           mMeshToNodeMap;
     // mesh names
     std::vector< std::string >            mMeshNames;
-    std::map< std::string, MeshContainerRef >
+    std::map< std::string, GeometryRef >
                                           mMeshMap;
     
     // node names

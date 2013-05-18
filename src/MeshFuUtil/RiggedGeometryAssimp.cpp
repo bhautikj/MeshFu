@@ -1,4 +1,4 @@
-#include "ModelWranglerAssimp.h"
+#include "RiggedGeometryAssimp.h"
 #include "MeshFuUtil.h"
 
 #include "assimp/postprocess.h"
@@ -109,7 +109,7 @@ inline std::string intToString(int i)
     return s;
 }
 
-void fromAssimp( const aiMesh *aim, MeshContainerRef cim )
+void fromAssimp( const aiMesh *aim, GeometryRef cim )
 {
   // copy vertices
   for ( unsigned i = 0; i < aim->mNumVertices; ++i )
@@ -160,8 +160,8 @@ void fromAssimp( const aiMesh *aim, MeshContainerRef cim )
   }
 }
 
-ModelWranglerAssimp::ModelWranglerAssimp(const std::string &file) :
-  ModelWrangler( file )
+RiggedGeometryAssimp::RiggedGeometryAssimp(const std::string &file) :
+  RiggedGeometry( file )
 {
   
     unsigned flags = aiProcess_Triangulate |
@@ -199,7 +199,7 @@ ModelWranglerAssimp::ModelWranglerAssimp(const std::string &file) :
   mRootNodeName = mRootNode->getName();
 }
 
-void ModelWranglerAssimp::loadAllMeshes()
+void RiggedGeometryAssimp::loadAllMeshes()
 {
 
   for ( unsigned i = 0; i < mScene->mNumMeshes; ++i )
@@ -209,7 +209,7 @@ void ModelWranglerAssimp::loadAllMeshes()
     {
       name = name + "_" + intToString(i);
     }
-    MeshContainerRef meshFuRef = convertAiMesh( mScene->mMeshes[ i ], name );
+    GeometryRef meshFuRef = convertAiMesh( mScene->mMeshes[ i ], name );
     mModelMeshes.push_back( meshFuRef );
     mMeshMap[ name ] = meshFuRef;
     mMeshNames.push_back( name );
@@ -217,11 +217,11 @@ void ModelWranglerAssimp::loadAllMeshes()
 }
 
 
-MeshContainerRef ModelWranglerAssimp::convertAiMesh( const aiMesh *mesh, std::string nameToUse )
+GeometryRef RiggedGeometryAssimp::convertAiMesh( const aiMesh *mesh, std::string nameToUse )
 {
   
   // the current AssimpMesh we will be populating data into.
-  MeshContainerRef meshFuRef = MeshContainerRef( new MeshContainer() );
+  GeometryRef meshFuRef = GeometryRef( new Geometry() );
 
   meshFuRef->mName = nameToUse;//fromAssimp( mesh->mName );
 
@@ -443,7 +443,7 @@ MeshContainerRef ModelWranglerAssimp::convertAiMesh( const aiMesh *mesh, std::st
   
 }
 
-NodeRef ModelWranglerAssimp::loadNodes( const aiNode *nd, NodeRef parentRef )
+NodeRef RiggedGeometryAssimp::loadNodes( const aiNode *nd, NodeRef parentRef )
 {
   NodeRef nodeRef = NodeRef( new Node() );
   nodeRef->setParent( parentRef );

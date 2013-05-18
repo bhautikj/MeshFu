@@ -24,9 +24,8 @@ REQUIRE_HEADER(meshfu_INCLUDE_DIR MeshFu.h)
 
 SET(MESHFU_INCLUDES
 ${meshfu_INCLUDE_DIR}/MeshFuGeometry.h
-${meshfu_INCLUDE_DIR}/MeshFuContainer.h
 ${meshfu_INCLUDE_DIR}/MeshFuNode.h
-${meshfu_INCLUDE_DIR}/MeshFuModelWrangler.h
+${meshfu_INCLUDE_DIR}/MeshFuRiggedGeometry.h
 ${meshfu_INCLUDE_DIR}/MeshFuUtil.h
 ${meshfu_INCLUDE_DIR}/gzstream.h
 ${meshfu_INCLUDE_DIR}/MeshFuDrawableMesh.h
@@ -34,9 +33,8 @@ ${meshfu_INCLUDE_DIR}/MeshFuDrawableMesh.h
 
 SET(MESHFU_SOURCES
 ${meshfu_SRC_DIR}/MeshFuGeometry.cpp
-${meshfu_SRC_DIR}/MeshFuContainer.cpp
 ${meshfu_SRC_DIR}/MeshFuNode.cpp
-${meshfu_SRC_DIR}/MeshFuModelWrangler.cpp
+${meshfu_SRC_DIR}/MeshFuRiggedGeometry.cpp
 ${meshfu_SRC_DIR}/MeshFuUtil.cpp
 ${meshfu_SRC_DIR}/gzstream.cpp
 ${meshfu_SRC_DIR}/MeshFuDrawableMesh.cpp

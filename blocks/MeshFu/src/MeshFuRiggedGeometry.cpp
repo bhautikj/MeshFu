@@ -18,7 +18,7 @@
  
  */
 
-#include "MeshFuModelWrangler.h"
+#include "MeshFuRiggedGeometry.h"
 
 #include <fstream>
 #include "MeshFuUtil.h"
@@ -28,9 +28,9 @@
 namespace MeshFu
 {
   
-  void ModelWrangler::buildAll()
+  void RiggedGeometry::buildAll()
   {
-    std::vector< MeshContainerRef >::iterator it =  mModelMeshes.begin();
+    std::vector< GeometryRef >::iterator it =  mModelMeshes.begin();
     std::string modelDir = ci::fs::path(mFilePath).parent_path().string();
     
     while (it != mModelMeshes.end())
@@ -55,7 +55,7 @@ namespace MeshFu
       node->mMeshes.clear();
       for(int i=0; i<node->mMeshNames.size(); i++)
       {
-        MeshContainerRef mesh = mMeshMap[node->mMeshNames[i]];
+        GeometryRef mesh = mMeshMap[node->mMeshNames[i]];
         node->mMeshes.push_back(mesh);
         if (mMeshToNodeMap.find(mesh) == mMeshToNodeMap.end())
         {
@@ -72,7 +72,7 @@ namespace MeshFu
     }
   }
   
-  void ModelWrangler::write(ogzstream& stream)
+  void RiggedGeometry::write(ogzstream& stream)
   {
     int nMeshes = mModelMeshes.size();
     stream<<nMeshes<<std::endl;
@@ -96,14 +96,14 @@ namespace MeshFu
     std::cout<<"writing complete"<<std::endl;
   }
   
-  void ModelWrangler::read(igzstream& stream)
+  void RiggedGeometry::read(igzstream& stream)
   {
     int nMeshes;
     stream>>nMeshes;
     mModelMeshes.clear();
     for (int i=0; i<nMeshes; i++)
     {
-      MeshContainerRef meshFu = MeshContainerRef(new MeshContainer);
+      GeometryRef meshFu = GeometryRef(new Geometry);
       meshFu->read(stream);
       
       mModelMeshes.push_back(meshFu);
@@ -142,13 +142,13 @@ namespace MeshFu
     }
   }
   
-  void ModelWrangler::update()
+  void RiggedGeometry::update()
   {
     updateSkinning();
     updateMeshes();
   }
   
-  void ModelWrangler::draw()
+  void RiggedGeometry::draw()
   {
     //NOTE:
     //fixing alpha blending: https://forum.libcinder.org/topic/alpha-texture-setup
@@ -158,57 +158,57 @@ namespace MeshFu
     {
       NodeRef nodeRef = *it;
       
-      std::vector< MeshContainerRef >::const_iterator meshIt = nodeRef->mMeshes.begin();
+      std::vector< GeometryRef >::const_iterator meshIt = nodeRef->mMeshes.begin();
       for ( ; meshIt != nodeRef->mMeshes.end(); ++meshIt )
       {
-        MeshContainerRef meshContainerRef = *meshIt;
-        meshContainerRef->mDrawable->draw();
+        GeometryRef geometryRef = *meshIt;
+        geometryRef->mDrawable->draw();
       }
     }
   }
   
-  void ModelWrangler::updateMeshes()
+  void RiggedGeometry::updateMeshes()
   {
     std::vector< NodeRef >::iterator it = mMeshNodes.begin();
     for ( ; it != mMeshNodes.end(); ++it )
     {
       NodeRef nodeRef = *it;
       
-      std::vector< MeshContainerRef >::iterator meshIt = nodeRef->mMeshes.begin();
+      std::vector< GeometryRef >::iterator meshIt = nodeRef->mMeshes.begin();
       for ( ; meshIt != nodeRef->mMeshes.end(); ++meshIt )
       {
-        MeshContainerRef meshContainerRef = *meshIt;
+        GeometryRef geometryRef = *meshIt;
         
-        if ( meshContainerRef->mValidCache )
+        if ( geometryRef->mValidCache )
           continue;
         
-        meshContainerRef->mValidCache = true;
+        geometryRef->mValidCache = true;
       }
     }
   }
   
-  void ModelWrangler::updateSkinning()
+  void RiggedGeometry::updateSkinning()
   {
     std::vector< NodeRef >::const_iterator it = mMeshNodes.begin();
     for ( ; it != mMeshNodes.end(); ++it )
     {
       NodeRef nodeRef = *it;
       
-      std::vector< MeshContainerRef >::const_iterator meshIt = nodeRef->mMeshes.begin();
+      std::vector< GeometryRef >::const_iterator meshIt = nodeRef->mMeshes.begin();
       for ( ; meshIt != nodeRef->mMeshes.end(); ++meshIt )
       {
-        MeshContainerRef meshContainerRef = *meshIt;
+        GeometryRef geometryRef = *meshIt;
         // current mesh we are introspecting
-//         const MeshTri mesh = meshContainerRef->mMeshTri;
+//         const MeshTri mesh = geometryRef->mMeshTri;
         
-        meshContainerRef->mDrawable->setNodeTransform(nodeRef->getDerivedTransform());
+        geometryRef->mDrawable->setNodeTransform(nodeRef->getDerivedTransform());
         
         // calculate bone matrices
-        //std::vector< cinder::Matrix44f > boneMatrices( meshContainerRef->mBones.size() );
+        //std::vector< cinder::Matrix44f > boneMatrices( geometryRef->mBones.size() );
         
-        for ( unsigned a = 0; a < meshContainerRef->mBones.size() ; ++a )
+        for ( unsigned a = 0; a < geometryRef->mBones.size() ; ++a )
         {
-          const BoneRef bone = meshContainerRef->mBones[ a ];
+          const BoneRef bone = geometryRef->mBones[ a ];
           
           // find the corresponding node by again looking recursively through
           // the node hierarchy for the same name
@@ -219,47 +219,47 @@ namespace MeshFu
           // we're back at mesh coordinates again
           cinder::Matrix44f transformMat = nodeRef->getDerivedTransform() * bone->mOffsetMatrix;
           
-          meshContainerRef->mDrawable->mBoneMatrices[ a ] = transformMat;
+          geometryRef->mDrawable->mBoneMatrices[ a ] = transformMat;
         }
         
         
-        meshContainerRef->mValidCache = false;
+        geometryRef->mValidCache = false;
         
 #ifndef CINDER_GLES2
         /*
-         meshContainerRef->mDrawable->preUpdate();
+         geometryRef->mDrawable->preUpdate();
          
-         unsigned nVerts = meshContainerRef->mMeshTri.mVertices.size();
+         unsigned nVerts = geometryRef->mMeshTri.mVertices.size();
          for (unsigned a=0; a < nVerts; a++)
          {
          cinder::Vec3f srcPos = mesh.mVertices[a];
-         for(int i=0;i<meshContainerRef->mMorphWeights.size(); i++)
+         for(int i=0;i<geometryRef->mMorphWeights.size(); i++)
          {
-         float wt = meshContainerRef->mMorphWeights[i];
+         float wt = geometryRef->mMorphWeights[i];
          if (wt>0.0)
          {
          srcPos = srcPos + (mesh.mMorphs[i]->mVertices[a] - srcPos) * wt;
          }
          }
          
-         int x = int(meshContainerRef->mDrawable->mBoneIndices[a*4+0]);
-         int y = int(meshContainerRef->mDrawable->mBoneIndices[a*4+1]);
-         int z = int(meshContainerRef->mDrawable->mBoneIndices[a*4+2]);
-         int w = int(meshContainerRef->mDrawable->mBoneIndices[a*4+3]);
-         float wtx = meshContainerRef->mDrawable->mBoneWeights[a*4+0];
-         float wty = meshContainerRef->mDrawable->mBoneWeights[a*4+1];
-         float wtz = meshContainerRef->mDrawable->mBoneWeights[a*4+2];
-         float wtw = meshContainerRef->mDrawable->mBoneWeights[a*4+3];
+         int x = int(geometryRef->mDrawable->mBoneIndices[a*4+0]);
+         int y = int(geometryRef->mDrawable->mBoneIndices[a*4+1]);
+         int z = int(geometryRef->mDrawable->mBoneIndices[a*4+2]);
+         int w = int(geometryRef->mDrawable->mBoneIndices[a*4+3]);
+         float wtx = geometryRef->mDrawable->mBoneWeights[a*4+0];
+         float wty = geometryRef->mDrawable->mBoneWeights[a*4+1];
+         float wtz = geometryRef->mDrawable->mBoneWeights[a*4+2];
+         float wtw = geometryRef->mDrawable->mBoneWeights[a*4+3];
          
-         cinder::Vec3f p = meshContainerRef->mDrawable->mBoneMatrices[x] * srcPos * wtx +\
-         meshContainerRef->mDrawable->mBoneMatrices[y] * srcPos * wty +\
-         meshContainerRef->mDrawable->mBoneMatrices[z] * srcPos * wtz +\
-         meshContainerRef->mDrawable->mBoneMatrices[w] * srcPos * wtw;
+         cinder::Vec3f p = geometryRef->mDrawable->mBoneMatrices[x] * srcPos * wtx +\
+         geometryRef->mDrawable->mBoneMatrices[y] * srcPos * wty +\
+         geometryRef->mDrawable->mBoneMatrices[z] * srcPos * wtz +\
+         geometryRef->mDrawable->mBoneMatrices[w] * srcPos * wtw;
          
-         meshContainerRef->mDrawable->setVertex(p, a);
+         geometryRef->mDrawable->setVertex(p, a);
          }
          
-         meshContainerRef->mDrawable->postUpdate();
+         geometryRef->mDrawable->postUpdate();
          */
 #endif
       }

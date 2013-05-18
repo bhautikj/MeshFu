@@ -2,8 +2,8 @@ FIND_PACKAGE(assimp)
 FIND_PACKAGE(cinder)
 
 SET(MESHFUASSIMP_SOURCES
-ModelWranglerAssimp.cpp
-ModelWranglerAssimp.h
+RiggedGeometryAssimp.cpp
+RiggedGeometryAssimp.h
 MeshPacker.cpp
 )
 
