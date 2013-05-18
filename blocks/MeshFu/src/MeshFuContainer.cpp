@@ -33,48 +33,48 @@ namespace MeshFu
   void MeshContainer::build(std::string modelDir)
   {
     DrawableMesh* vboMesh = new DrawableMesh();
-    int nVerts = mMeshTri.mVertices.size();
+    int nVerts = mVertices.size();
     GLfloat* positions = new GLfloat[nVerts*3];
     // copy vertices
     for ( unsigned i = 0; i < nVerts ; ++i )
     {
-      positions[i*3+0] = mMeshTri.mVertices[i][0];
-      positions[i*3+1] = mMeshTri.mVertices[i][1];
-      positions[i*3+2] = mMeshTri.mVertices[i][2];
+      positions[i*3+0] = mVertices[i][0];
+      positions[i*3+1] = mVertices[i][1];
+      positions[i*3+2] = mVertices[i][2];
     }
     
-    int nNormals = mMeshTri.mNormals.size();
+    int nNormals = mNormals.size();
     GLfloat* normals =  new GLfloat[nNormals*3];
     for ( unsigned i = 0; i < nNormals ; ++i )
     {
-      normals[i*3+0] = mMeshTri.mNormals[i][0];
-      normals[i*3+1] = mMeshTri.mNormals[i][1];
-      normals[i*3+2] = mMeshTri.mNormals[i][2];
+      normals[i*3+0] = mNormals[i][0];
+      normals[i*3+1] = mNormals[i][1];
+      normals[i*3+2] = mNormals[i][2];
     }
     
-    int nTexCoords = mMeshTri.mTextureCoords.size();
+    int nTexCoords = mTextureCoords.size();
     GLfloat* texcoords =  new GLfloat[nTexCoords*2];
     for ( unsigned i = 0; i < nTexCoords; ++i )
     {
-      texcoords[i*2+0] = mMeshTri.mTextureCoords[i][0];
-      texcoords[i*2+1] = mMeshTri.mTextureCoords[i][1];
+      texcoords[i*2+0] = mTextureCoords[i][0];
+      texcoords[i*2+1] = mTextureCoords[i][1];
     }
     
     
-    int nFaces = mMeshTri.mFaces.size();
+    int nFaces = mFaces.size();
     GLushort* indices =  new GLushort[nFaces*3];
 #ifndef CINDER_GLES2
     std::vector<uint32_t> idx;
 #endif
     for ( unsigned i = 0; i < nFaces; ++i )
     {
-      indices[i*3+0] = mMeshTri.mFaces[i][0];
-      indices[i*3+1] = mMeshTri.mFaces[i][1];
-      indices[i*3+2] = mMeshTri.mFaces[i][2];
+      indices[i*3+0] = mFaces[i][0];
+      indices[i*3+1] = mFaces[i][1];
+      indices[i*3+2] = mFaces[i][2];
 #ifndef CINDER_GLES2
-      idx.push_back(mMeshTri.mFaces[i][0]);
-      idx.push_back(mMeshTri.mFaces[i][1]);
-      idx.push_back(mMeshTri.mFaces[i][2]);
+      idx.push_back(mFaces[i][0]);
+      idx.push_back(mFaces[i][1]);
+      idx.push_back(mFaces[i][2]);
 #endif
       
     }
@@ -180,7 +180,7 @@ namespace MeshFu
   
   void MeshContainer::write(ogzstream& stream)
   {
-    mMeshTri.write(stream);
+    MeshTri::write(stream);
     Util::writeString(stream, mName);
     Util::writeString(stream, mTextureData.relativeTexPath);
     Util::writeGLenum(stream, mMaterialData.face);
@@ -222,7 +222,7 @@ namespace MeshFu
   
   void MeshContainer::read(igzstream& stream)
   {
-    mMeshTri.read(stream);
+    MeshTri::read(stream);
     Util::readString(stream, mName);
     if (debugOut)
       std::cout<<"reading mesh name "<<mName<<std::endl;

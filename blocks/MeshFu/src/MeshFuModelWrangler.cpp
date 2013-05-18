@@ -199,7 +199,7 @@ namespace MeshFu
       {
         MeshContainerRef meshContainerRef = *meshIt;
         // current mesh we are introspecting
-        const MeshTri mesh = meshContainerRef->mMeshTri;
+//         const MeshTri mesh = meshContainerRef->mMeshTri;
         
         meshContainerRef->mDrawable->setNodeTransform(nodeRef->getDerivedTransform());
         

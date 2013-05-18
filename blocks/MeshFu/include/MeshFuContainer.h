@@ -36,10 +36,14 @@ namespace MeshFu
   class MeshContainer;
   typedef std::shared_ptr< MeshContainer > MeshContainerRef;
  
-  class MeshContainer
+  class MeshContainer : public MeshTri
   {
   public:
-    MeshContainer() {}
+    MeshContainer() : MeshTri()
+    {
+      
+    }
+    
     ~MeshContainer()
     {
     }
@@ -69,7 +73,7 @@ namespace MeshFu
       GLenum wrapT;
     };
     
-    MeshTri               mMeshTri;
+//     MeshTri               mMeshTri;
     std::string           mName;
     textureStruct         mTextureData;
     materialStruct        mMaterialData;

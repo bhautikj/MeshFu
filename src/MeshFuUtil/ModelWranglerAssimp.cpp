@@ -109,7 +109,7 @@ inline std::string intToString(int i)
     return s;
 }
 
-void fromAssimp( const aiMesh *aim, MeshTri *cim )
+void fromAssimp( const aiMesh *aim, MeshContainerRef cim )
 {
   // copy vertices
   for ( unsigned i = 0; i < aim->mNumVertices; ++i )
@@ -357,7 +357,7 @@ MeshContainerRef ModelWranglerAssimp::convertAiMesh( const aiMesh *mesh, std::st
     }    
   }
 
-  fromAssimp( mesh, &meshFuRef->mMeshTri );
+  fromAssimp( mesh, meshFuRef );
   meshFuRef->mValidCache = true;
   
 //   assimpMeshRef->mAnimatedPos.resize( mesh->mNumVertices );
@@ -399,11 +399,11 @@ MeshContainerRef ModelWranglerAssimp::convertAiMesh( const aiMesh *mesh, std::st
 //       }
 //     }
     
-    meshFuRef->mMeshTri.mMorphs.push_back(morph);
+    meshFuRef->mMorphs.push_back(morph);
     meshFuRef->mMorphWeights.push_back(0.0);
   }
 
-  int nVerts = meshFuRef->mMeshTri.mVertices.size();
+  int nVerts = meshFuRef->mVertices.size();
   std::vector<WeightPacker> packList;
   packList.resize(nVerts);
   meshFuRef->mBoneIndices.resize(nVerts);

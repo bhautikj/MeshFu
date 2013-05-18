@@ -169,7 +169,7 @@ mValidAsset(true)
   {
     string meshName = *it;
     MeshFu::MeshContainerRef meshfu = mLoader.getMeshByName(meshName);
-    if (meshfu->mMeshTri.mMorphs.size() != 0)
+    if (meshfu->mMorphs.size() != 0)
       mMeshNames.push_back(meshName);
     it++;
   }
