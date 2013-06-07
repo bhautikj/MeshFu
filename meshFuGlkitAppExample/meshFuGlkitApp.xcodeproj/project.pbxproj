@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		71142A9717611649005BF5C5 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71142A9617611649005BF5C5 /* ImageIO.framework */; };
+		71142A991761164F005BF5C5 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71142A981761164F005BF5C5 /* MobileCoreServices.framework */; };
 		71267D7E16D0DA4600588CE1 /* AppCore.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71267D7916D0DA4600588CE1 /* AppCore.cpp */; };
 		71267D8016D0DA4600588CE1 /* MetaApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71267D7C16D0DA4600588CE1 /* MetaApp.cpp */; };
 		71267D9516D0DADF00588CE1 /* gzstream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71267D8E16D0DADF00588CE1 /* gzstream.cpp */; };
@@ -41,6 +43,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		71142A9617611649005BF5C5 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		71142A981761164F005BF5C5 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		71267D7916D0DA4600588CE1 /* AppCore.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AppCore.cpp; path = ../../src/AppCore.cpp; sourceTree = "<group>"; };
 		71267D7A16D0DA4600588CE1 /* AppCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppCore.h; path = ../../src/AppCore.h; sourceTree = "<group>"; };
 		71267D7C16D0DA4600588CE1 /* MetaApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MetaApp.cpp; path = ../../src/MetaApp.cpp; sourceTree = "<group>"; };
@@ -95,6 +99,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71142A991761164F005BF5C5 /* MobileCoreServices.framework in Frameworks */,
+				71142A9717611649005BF5C5 /* ImageIO.framework in Frameworks */,
 				E2E774051473187900FD113C /* CoreMedia.framework in Frameworks */,
 				E2E774031473184D00FD113C /* CoreVideo.framework in Frameworks */,
 				944F2D041460D2A700BAB970 /* QuartzCore.framework in Frameworks */,
@@ -166,7 +172,7 @@
 				71267DBC16D0DDCC00588CE1 /* src */,
 			);
 			name = "cinder-glkit";
-			path = "../../cinder-glkit/blocks/cinder-glkit";
+			path = "../../cinder-glkit-es2reint/blocks/cinder-glkit";
 			sourceTree = SOURCE_ROOT;
 		};
 		71267DB816D0DDCC00588CE1 /* include */ = {
@@ -218,6 +224,8 @@
 		9442F86E145F2A3B00C76F9E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				71142A981761164F005BF5C5 /* MobileCoreServices.framework */,
+				71142A9617611649005BF5C5 /* ImageIO.framework */,
 				E2E774041473187900FD113C /* CoreMedia.framework */,
 				E2E774021473184D00FD113C /* CoreVideo.framework */,
 				944F2D031460D2A700BAB970 /* QuartzCore.framework */,
@@ -370,10 +378,11 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CINDER_PATH = "";
+				CINDER_PATH = /Users/bjoshi/src/github/cinder_es2_reint/;
 				CINDER_PATH_ryan = "../../../code/frameworks/cinder-es2-timeline";
 				CINDER_PATH_tom = /Users/tom/Documents/Code/Cinder/CinderES2;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
@@ -399,10 +408,11 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CINDER_PATH = "";
+				CINDER_PATH = /Users/bjoshi/src/github/cinder_es2_reint/;
 				CINDER_PATH_ryan = "../../../code/frameworks/cinder-es2-timeline";
 				CINDER_PATH_tom = /Users/tom/Documents/Code/Cinder/CinderES2;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = YES;

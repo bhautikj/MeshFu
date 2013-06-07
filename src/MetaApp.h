@@ -21,6 +21,7 @@
 
 #include <string>
 #include "cinder/app/App.h"
+
 #if defined( CINDER_COCOA )
 #include "cinder/app/AppCocoaTouch.h"
 #endif
@@ -56,7 +57,7 @@ public:
     return assetPathString;
   }
   
-  virtual void resize( ResizeEvent event ) = 0;
+  //virtual void resize( ResizeEvent event ) = 0;
   virtual void mouseDown( MouseEvent event ) = 0;
   virtual void mouseDrag( MouseEvent event ) = 0;
 #if defined( CINDER_COCOA )

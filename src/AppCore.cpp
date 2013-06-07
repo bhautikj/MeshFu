@@ -139,12 +139,15 @@ void AppCore::touchesMoved( TouchEvent event )
   mMayaCam.mouseDrag(eventPos, leftDown,rightDown,middleDown);
 }
 
+/*
 void AppCore::resize( ResizeEvent event )
 {
   CameraPersp cam = mMayaCam.getCamera();
   cam.setAspectRatio( getWindowAspectRatio() );
   mMayaCam.setCurrentCam( cam );
 }
+*/
+
 
 //----------
 

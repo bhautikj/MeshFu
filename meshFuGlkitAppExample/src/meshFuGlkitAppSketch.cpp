@@ -22,6 +22,31 @@
 #include "MetaApp.h"
 #include "AppCore.h"
 
+class DummyApp : public cinder::app::App
+{
+  public:
+
+  
+  virtual void	quit() {}
+  virtual const Settings&	getSettings() const { App::Settings* x = new App::Settings; return *x; };
+  virtual WindowRef	getWindow() const {return (WindowRef)0; };
+	virtual size_t		getNumWindows() const { return 0; }
+	virtual WindowRef	getWindowIndex( size_t index ) const { return 0;}
+	virtual float		getFrameRate() const { return 0.0; }
+	virtual void		setFrameRate( float frameRate ) {}
+  virtual fs::path			getAppPath() const { return fs::path(""); }
+  virtual void	launch( const char *title, int argc, char * const argv[] ) {}
+
+  static void initDummy()
+  {
+    DummyApp* dummy = new DummyApp();
+    App::sInstance = dummy;
+  }
+  
+  protected:
+    DummyApp() : cinder::app::App() {}
+    ~DummyApp() {}
+};
 
 struct AppProxyGlkit : public AppProxyAbstract
 {
@@ -46,6 +71,7 @@ struct AppProxyGlkit : public AppProxyAbstract
 
 void meshFuGlkitAppSketch::setup()
 {
+  DummyApp::initDummy();
   mMetaApp = new AppCore(new AppProxyGlkit(this));
   mMetaApp->setup();
 }
