@@ -378,7 +378,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CINDER_PATH = /Users/bjoshi/src/github/cinder_es2_reint/;
+				CINDER_PATH = "";
 				CINDER_PATH_ryan = "../../../code/frameworks/cinder-es2-timeline";
 				CINDER_PATH_tom = /Users/tom/Documents/Code/Cinder/CinderES2;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
@@ -408,7 +408,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CINDER_PATH = /Users/bjoshi/src/github/cinder_es2_reint/;
+				CINDER_PATH = "";
 				CINDER_PATH_ryan = "../../../code/frameworks/cinder-es2-timeline";
 				CINDER_PATH_tom = /Users/tom/Documents/Code/Cinder/CinderES2;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
