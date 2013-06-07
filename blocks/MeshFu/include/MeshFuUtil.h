@@ -24,7 +24,7 @@
 #include "cinder/Color.h"
 #include "cinder/Quaternion.h"
 #include "cinder/Matrix44.h"
-#include "cinder/gl/Texture.h"
+#include "cinder/gl/gl.h"
 
 namespace MeshFu
 {

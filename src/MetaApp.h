@@ -22,7 +22,7 @@
 #include <string>
 #include "cinder/app/App.h"
 
-#if defined( CINDER_COCOA )
+#if defined( CINDER_GLES2 )
 #include "cinder/app/AppCocoaTouch.h"
 #endif
 
