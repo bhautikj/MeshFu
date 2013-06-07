@@ -98,6 +98,11 @@ namespace MeshFu
       std::cout<<"angle: "<<mOrientation.getAngle()<<" pitch:"<<mOrientation.getPitch()<<" yaw:"<<mOrientation.getYaw()<<" roll:"<<mOrientation.getRoll()<<std::endl;
     }
     
+    std::vector< NodeRef >& getChildren()
+    {
+      return mChildren;
+    }
+    
   protected:
     /// Shared pointer to parent node.
     NodeRef mParent;

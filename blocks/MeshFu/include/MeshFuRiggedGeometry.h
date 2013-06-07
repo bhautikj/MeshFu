@@ -28,6 +28,9 @@
 namespace MeshFu
 {
   
+  class RiggedGeometry;
+  typedef std::shared_ptr< RiggedGeometry > RiggedGeometryRef;
+  
   class RiggedGeometry
   {
     
