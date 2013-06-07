@@ -52,7 +52,7 @@ public:
   virtual void update();
   virtual void draw();
   
-  void resize( ResizeEvent event );
+  //void resize( ResizeEvent event );
   void mouseDown( MouseEvent event );
   void mouseDrag( MouseEvent event );
   void touchesBegan( TouchEvent event );

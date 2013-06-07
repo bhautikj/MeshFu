@@ -6,6 +6,9 @@ SET(CMAKE_BUILD_TYPE DEBUG)
 INCLUDE(ListFiles)
 INCLUDE(ConfigMacros)
 
+# clang compat
+SET(CMAKE_CXX_FLAGS "-std=c++11 -stdlib=libc++")
+
 SET(EXE ${PROJECT_NAME})
 
 FIND_PACKAGE(cinder)

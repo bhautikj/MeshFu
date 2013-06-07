@@ -27,7 +27,7 @@ class AssimpApp : public AppBasic
     public:
     void setup();
     void prepareSettings( Settings *settings );
-    void resize( ResizeEvent event );
+    //void resize( ResizeEvent event );
     void mouseDown( MouseEvent event );
     void mouseDrag( MouseEvent event );
     
@@ -71,10 +71,12 @@ void AssimpApp::mouseDrag( MouseEvent event )
     mMetaApp->mouseDrag(event);
 }
 
+/*
 void AssimpApp::resize( ResizeEvent event )
 {
     mMetaApp->resize(event);
 }
+*/
 
 
 CINDER_APP_BASIC( AssimpApp, RendererGl(0) )
