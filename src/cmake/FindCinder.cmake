@@ -12,12 +12,29 @@ if(EXISTS "${cinder_DIR}")
   REQUIRE_HEADER(cinder_INCLUDE_DIR cinder/app/AppBasic.h)
 
   find_library(cinder_LIBRARY
-    NAMES cinder
-    PATHS ${cinder_DIR}/lib
+    NAMES cinder 
+    PATHS ${cinder_DIR}/lib 
+  )
+   
+  find_library(cinder_boost_system_LIBRARIES
+    NAMES boost_system
+    PATHS ${cinder_DIR}/lib/macosx
   )
   
+  find_library(cinder_boost_filesystem_LIBRARIES
+    NAMES boost_filesystem
+    PATHS ${cinder_DIR}/lib/macosx
+  )
+  
+  find_library(cinder_boost_date_time_LIBRARIES
+    NAMES boost_date_time
+    PATHS ${cinder_DIR}/lib/macosx
+  )
+  
+    
+  
   set(cinder_PROCESS_INCLUDES cinder_INCLUDE_DIR cinder_INCLUDE_DIRS)
-  set(cinder_PROCESS_LIBS cinder_LIBRARY cinde_LIBRARIES)
+  set(cinder_PROCESS_LIBS cinder_LIBRARY)
   libfind_process(cinder)
 
   #assimp cinder block
