@@ -64,6 +64,9 @@ namespace MeshFu
     void setOrientation( const ci::Quatf &q );
     const ci::Quatf &getOrientation() const;
     
+    void setEulerAngles(const float& x, const float& y, const float& z);
+    void getEulerAngles(float& x, float& y, float& z);
+    
     void setPosition( const ci::Vec3f &pos );
     const ci::Vec3f& getPosition() const;
     
