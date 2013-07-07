@@ -132,6 +132,7 @@ namespace MeshFu
       std::string meshName = mModelMeshes[i]->mName;
       mMeshNames.push_back(meshName);
       mMeshMap[meshName] = mModelMeshes[i];
+      mMeshVisibilityMap[meshName] = true;
     }
     
     for(int i=0; i<nNodes; i++)
@@ -153,16 +154,11 @@ namespace MeshFu
     //NOTE:
     //fixing alpha blending: https://forum.libcinder.org/topic/alpha-texture-setup
     //?
-    std::vector< NodeRef >::const_iterator it = mMeshNodes.begin();
-    for ( ; it != mMeshNodes.end(); ++it )
+    for (int i=0; i< mMeshNames.size(); i++)
     {
-      NodeRef nodeRef = *it;
-      
-      std::vector< GeometryRef >::const_iterator meshIt = nodeRef->mMeshes.begin();
-      for ( ; meshIt != nodeRef->mMeshes.end(); ++meshIt )
+      if (mMeshVisibilityMap[mMeshNames[i]] == true)
       {
-        GeometryRef geometryRef = *meshIt;
-        geometryRef->mDrawable->draw();
+        getMeshByName(mMeshNames[i])->mDrawable->draw();
       }
     }
   }
@@ -266,4 +262,47 @@ namespace MeshFu
     }
   }
   
+  
+    std::vector< std::string >            
+    RiggedGeometry::getMeshNames() 
+    { 
+      return mMeshNames; 
+    }
+    
+    std::vector< std::string >            
+    RiggedGeometry::getNodeNames() 
+    { 
+      return mNodeNames; 
+    }
+    
+    GeometryRef                           
+    RiggedGeometry::getMeshByName(std::string name) 
+    { 
+      return mMeshMap[name]; 
+    }
+    
+    NodeRef                               
+    RiggedGeometry::getNodeByName(std::string name) 
+    { 
+      return mNodeMap[name]; 
+    }
+    
+    NodeRef                               
+    RiggedGeometry::getRootNode() 
+    { 
+      return mRootNode; 
+    }
+    
+    bool                                  
+    RiggedGeometry::getMeshVisibility(const std::string& name)
+    {
+      return mMeshVisibilityMap[name];
+    }
+    
+    bool
+    RiggedGeometry::setMeshVisibility(const std::string& name, const bool& visible)
+    {
+      mMeshVisibilityMap[name] = visible;
+    }
+
 }

@@ -42,12 +42,15 @@ namespace MeshFu
     virtual void                          read(igzstream& stream);
     void                                  buildAll();
     
-    std::vector< std::string >            getMeshNames() { return mMeshNames; }
-    std::vector< std::string >            getNodeNames() { return mNodeNames; }
-    GeometryRef                      getMeshByName(std::string name) { return mMeshMap[name]; }
-    NodeRef                               getNodeByName(std::string name) { return mNodeMap[name]; }
+    std::vector< std::string >            getMeshNames();
+    std::vector< std::string >            getNodeNames();
+    GeometryRef                           getMeshByName(std::string name);
+    NodeRef                               getNodeByName(std::string name);
     
-    NodeRef                               getRootNode() { return mRootNode; }
+    NodeRef                               getRootNode();
+    
+    bool                                  getMeshVisibility(const std::string& name);    
+    bool                                  setMeshVisibility(const std::string& name, const bool& visible);
     
     void update();
     void draw();
@@ -71,11 +74,11 @@ namespace MeshFu
     std::vector< std::string >            mMeshNames;
     std::map< std::string, GeometryRef >
                                           mMeshMap;
+    std::map < std::string, bool >        mMeshVisibilityMap;
     
     // node names
     std::vector< std::string >            mNodeNames;
     std::map< std::string, NodeRef >      mNodeMap;
-    
 
   };
   

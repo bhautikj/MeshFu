@@ -106,6 +106,8 @@ namespace MeshFu
       return mChildren;
     }
     
+    bool needsUpdate() { return mNeedsUpdate; }
+    
   protected:
     /// Shared pointer to parent node.
     NodeRef mParent;
