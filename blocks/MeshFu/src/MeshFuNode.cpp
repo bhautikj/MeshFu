@@ -298,8 +298,9 @@ namespace MeshFu
   }
   
   
-  void Node::setEulerAngles(const float& x, const float& y, const float& z)
+  void Node::setEulerAngles(const float& x, const float& y, const float& _z)
   {
+    float z = _z - M_PI;
     ci::Matrix33<float> X(1, 0, 0, 0, cos(x), sin(x), 0, -1.*sin(x), cos(x));
     ci::Matrix33<float> Y(cos(y), 0, -1.*sin(y), 0, 1, 0, sin(y), 0, cos(y));
     ci::Matrix33<float> Z(cos(z), sin(z), 0, -1.*sin(z), cos(z), 0, 0, 0, 1);
@@ -313,7 +314,7 @@ namespace MeshFu
     ci::Matrix33<float> qMat = getOrientation().toMatrix33();
     x = atan2(qMat.at(2,1), qMat.at(2,2));
     y = atan2(-1.0*qMat.at(2,0), sqrt(qMat.at(2,1)*qMat.at(2,1) + qMat.at(2,2)*qMat.at(2,2)));
-    z = atan2(qMat.at(1,0), qMat.at(0,0));
+    z = atan2(qMat.at(1,0), qMat.at(0,0)) + M_PI;
   }
 
 }//namespace MeshFu
