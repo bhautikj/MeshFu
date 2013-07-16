@@ -135,6 +135,8 @@ namespace MeshFu
       mMeshVisibilityMap[meshName] = true;
     }
     
+    std::sort(mMeshNames.begin(), mMeshNames.end());
+    
     for(int i=0; i<nNodes; i++)
     {
       std::string nodeName = mMeshNodes[i]->getName();

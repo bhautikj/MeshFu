@@ -158,6 +158,7 @@ namespace MeshFu
         data="GL_CLAMP_TO_EDGE";
       else
         assert(0);
+
       stream<<data<<std::endl;
     }
     

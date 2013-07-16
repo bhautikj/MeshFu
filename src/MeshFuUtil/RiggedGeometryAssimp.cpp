@@ -299,6 +299,9 @@ GeometryRef RiggedGeometryAssimp::convertAiMesh( const aiMesh *mesh, std::string
     int uwrap;
     if ( AI_SUCCESS == mtl->Get( AI_MATKEY_MAPPINGMODE_U_DIFFUSE( 0 ), uwrap ) )
     {
+      // default
+      meshFuRef->mMaterialFormatData.wrapS = GL_REPEAT;
+      
       switch ( uwrap )
       {
         case aiTextureMapMode_Wrap:
@@ -329,6 +332,9 @@ GeometryRef RiggedGeometryAssimp::convertAiMesh( const aiMesh *mesh, std::string
     int vwrap;
     if ( AI_SUCCESS == mtl->Get( AI_MATKEY_MAPPINGMODE_V_DIFFUSE( 0 ), vwrap ) )
     {
+      // default
+      meshFuRef->mMaterialFormatData.wrapT = GL_REPEAT;
+      
       switch ( vwrap )
       {
         case aiTextureMapMode_Wrap:
