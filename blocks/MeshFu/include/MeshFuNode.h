@@ -47,7 +47,11 @@ namespace MeshFu
     mScale( ci::Vec3f::one() ),
     mInheritOrientation( true ),
     mInheritScale( true ),
-    mNeedsUpdate( true )
+    mNeedsUpdate( true ),
+    mUseEulerLimits ( false ),
+    mEulerLimitsX ( ci::Vec3f(0, -1.*M_PI,M_PI) ),
+    mEulerLimitsY ( ci::Vec3f(0, -1.*M_PI,M_PI) ),
+    mEulerLimitsZ ( ci::Vec3f(0, -1.*M_PI,M_PI) )
     {
       
     }
@@ -66,6 +70,11 @@ namespace MeshFu
     
     void setEulerAngles(const float& x, const float& y, const float& z);
     void getEulerAngles(float& x, float& y, float& z);
+    
+    void setUseEulerLimits(const bool& useEulerLimits);
+    const bool getUseEulerLimits();
+    void setEulerLimits(const ci::Vec3f& x, const ci::Vec3f& y, const ci::Vec3f& z);
+    void getEulerLimits(ci::Vec3f& x, ci::Vec3f& y, ci::Vec3f& z);
     
     void setPosition( const ci::Vec3f &pos );
     const ci::Vec3f& getPosition() const;
@@ -170,6 +179,11 @@ namespace MeshFu
     
     virtual void          write(ogzstream& stream);
     virtual void          read(igzstream& stream);
+    
+    bool mUseEulerLimits;
+    ci::Vec3f mEulerLimitsX;
+    ci::Vec3f mEulerLimitsY;
+    ci::Vec3f mEulerLimitsZ;
     
     void update() const;
     

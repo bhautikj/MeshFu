@@ -305,6 +305,16 @@ namespace MeshFu
     RiggedGeometry::setMeshVisibility(const std::string& name, const bool& visible)
     {
       mMeshVisibilityMap[name] = visible;
+      return visible;
+    }
+    
+    void
+    RiggedGeometry::forceUpdate()
+    {
+      for (int i=0; i<mNodeNames.size(); i++)
+      {
+        getNodeByName(mNodeNames[i])->requestUpdate();
+      }
     }
 
 }

@@ -37,7 +37,7 @@ namespace MeshFu
     try {
       mMeshShader = cinder::gl::GlslProg(cinder::app::loadResource("skinMorph.vsh"),
                                          cinder::app::loadResource("skinMorph.fsh"));
-      std::cout<<"shader log: "<<mMeshShader.getShaderLog(mMeshShader.getHandle())<<std::endl;
+//       std::cout<<"shader log: "<<mMeshShader.getShaderLog(mMeshShader.getHandle())<<std::endl;
     } catch (cinder::gl::GlslProgCompileExc exc) {
       std::cout<<exc.what()<<std::endl;
       assert(0);

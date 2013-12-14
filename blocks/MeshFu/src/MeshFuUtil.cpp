@@ -157,7 +157,9 @@ namespace MeshFu
       else if(en==GL_CLAMP_TO_EDGE)
         data="GL_CLAMP_TO_EDGE";
       else
-        assert(0);
+        //good default is GL_FRONT
+        //assert(0);
+        data="GL_FRONT";
 
       stream<<data<<std::endl;
     }

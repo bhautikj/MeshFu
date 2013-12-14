@@ -205,7 +205,7 @@ namespace MeshFu
   
   //-----------------------------
   
-    void Geometry::build(std::string modelDir)
+  void Geometry::build(std::string modelDir)
   {
     DrawableMesh* vboMesh = new DrawableMesh();
     int nVerts = mVertices.size();

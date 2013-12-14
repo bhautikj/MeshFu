@@ -52,6 +52,7 @@ namespace MeshFu
     bool                                  getMeshVisibility(const std::string& name);    
     bool                                  setMeshVisibility(const std::string& name, const bool& visible);
     
+    void forceUpdate();
     void update();
     void draw();
     

@@ -24,6 +24,19 @@
 #include "MeshFuNode.h"
 #include "MeshFuUtil.h"
 
+namespace
+{
+  void
+  constrain(float &val, const ci::Vec3f& c)
+  {
+    if (val<c[1])
+      val = c[1];
+    else if (val>c[2])
+      val = c[2];
+    val += c[0];
+  }
+}
+
 namespace MeshFu
 {
   
@@ -143,6 +156,7 @@ namespace MeshFu
   
   const ci::Quatf &Node::getDerivedOrientation() const
   {
+//     std::cout<<"updating orientation for:"<<mName<<std::endl;
     if ( mNeedsUpdate )
       update();
     return mDerivedOrientation;
@@ -297,16 +311,33 @@ namespace MeshFu
     Util::readMatrix44f(stream, mDerivedTransform);
   }
   
-  
-  void Node::setEulerAngles(const float& x, const float& y, const float& _z)
+  void Node::setEulerAngles(const float& x, const float& y, const float& z)
   {
-    float z = _z - M_PI;
-    ci::Matrix33<float> X(1, 0, 0, 0, cos(x), sin(x), 0, -1.*sin(x), cos(x));
-    ci::Matrix33<float> Y(cos(y), 0, -1.*sin(y), 0, 1, 0, sin(y), 0, cos(y));
-    ci::Matrix33<float> Z(cos(z), sin(z), 0, -1.*sin(z), cos(z), 0, 0, 0, 1);
-    ci::Matrix33<float> R = Z * Y * X;
-    ci::Matrix33<float> qMat(R);
-    setOrientation(qMat);
+    if (mUseEulerLimits)
+    {
+      float ex = x;
+      float ey = y;
+      float ez = z;
+      constrain(ex, mEulerLimitsX);
+      constrain(ey, mEulerLimitsY);
+      constrain(ez, mEulerLimitsZ);
+      
+      ci::Matrix33<float> X(1, 0, 0, 0, cos(ex), sin(ex), 0, -1.*sin(ex), cos(ex));
+      ci::Matrix33<float> Y(cos(ey), 0, -1.*sin(ey), 0, 1, 0, sin(ey), 0, cos(ey));
+      ci::Matrix33<float> Z(cos(ez), sin(ez), 0, -1.*sin(ez), cos(ez), 0, 0, 0, 1);
+      ci::Matrix33<float> R = Z * Y * X;
+      ci::Matrix33<float> qMat(R);
+      setOrientation(qMat);
+    }
+    else
+    {
+      ci::Matrix33<float> X(1, 0, 0, 0, cos(x), sin(x), 0, -1.*sin(x), cos(x));
+      ci::Matrix33<float> Y(cos(y), 0, -1.*sin(y), 0, 1, 0, sin(y), 0, cos(y));
+      ci::Matrix33<float> Z(cos(z), sin(z), 0, -1.*sin(z), cos(z), 0, 0, 0, 1);
+      ci::Matrix33<float> R = Z * Y * X;
+      ci::Matrix33<float> qMat(R);
+      setOrientation(qMat);
+    }
   }
   
   void Node::getEulerAngles(float& x, float& y, float& z)
@@ -314,7 +345,44 @@ namespace MeshFu
     ci::Matrix33<float> qMat = getOrientation().toMatrix33();
     x = atan2(qMat.at(2,1), qMat.at(2,2));
     y = atan2(-1.0*qMat.at(2,0), sqrt(qMat.at(2,1)*qMat.at(2,1) + qMat.at(2,2)*qMat.at(2,2)));
-    z = atan2(qMat.at(1,0), qMat.at(0,0)) + M_PI;
+    z = atan2(qMat.at(1,0), qMat.at(0,0));
+    
+    if (mUseEulerLimits)
+    {
+      x -= mEulerLimitsX[0];
+      y -= mEulerLimitsY[0];
+      z -= mEulerLimitsZ[0];
+    }
   }
 
+  
+  
+  void 
+  Node::setUseEulerLimits(const bool& useEulerLimits)
+  {
+    mUseEulerLimits =  useEulerLimits;
+  }
+  
+  const bool 
+  Node::getUseEulerLimits()
+  {
+    return mUseEulerLimits;
+  }
+  
+  void 
+  Node::setEulerLimits(const ci::Vec3f& x, const ci::Vec3f& y, const ci::Vec3f& z)
+  {
+    mEulerLimitsX = x;
+    mEulerLimitsY = y;
+    mEulerLimitsZ = z;
+  }
+  
+  void
+  Node::getEulerLimits(ci::Vec3f& x, ci::Vec3f& y, ci::Vec3f& z)
+  {
+    x = mEulerLimitsX;
+    y = mEulerLimitsY;
+    z = mEulerLimitsZ;
+  }
+  
 }//namespace MeshFu
